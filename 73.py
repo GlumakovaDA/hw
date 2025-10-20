@@ -404,8 +404,6 @@ def cholesky_decomposition(A: Matrix):
             op += 2
 
         diag_el = A[i, i] - sum_sq
-        if diag_el <= 0:
-            raise ValueError(f"Матрица не является положительно определенной")
 
         L[i][i] = math.sqrt(diag_el)
         op += 2
@@ -646,4 +644,5 @@ if __name__ == "__main__":
     run_all_tests(n, A_np, x_true_data)
 
     test_cholesky()
+
     compare_cholesky_theory()
